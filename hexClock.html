@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .box{
+        margin: auto;
+        position: absolute;
+    }
+    .hexTime{
+        color: aliceblue;
+        font-size: xx-large;
+        text-align: center;
+        margin: 0;
+    }
+
+    
+    
+</style>
+<body>
+    <div class="background" id="background">
+        <div class="box">
+            <p class="hexTime" id="hexTime"></p>
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+            var x = 1;
+            var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            if(h<=9) {h = '0'+h;}
+            if(m<=9) {m = '0'+m;}
+            if(s<=9) {s = '0'+s;}
+            var hexColor = '#' + h + m + s;
+            document.getElementById('hexTime').innerHTML = hexColor;
+            document.getElementById('background').style.backgroundColor = hexColor;
+            setTimeout(updateTime, x*1000);
+        }
+        updateTime();
+        // $("div.background").css("background-color", hexColor);
+        // $("span#hexNumber").text(color);
+    </script>
+</body>
+</html>
