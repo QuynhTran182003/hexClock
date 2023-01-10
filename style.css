@@ -1,0 +1,20 @@
+html, body, .background{
+    height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.hexTime{
+    color: aliceblue;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    
